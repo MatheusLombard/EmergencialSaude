@@ -20,7 +20,7 @@ export function CadastroDois({navigation} : { navigation : any}) {
       hidden={true}
     />
     <View style={{flex: 1, justifyContent: "space-evenly", alignItems: 'center', marginTop: 10}}>
-      <View style={{borderWidth: 1, width: '100%'}}>
+      <View style={{width: '100%'}}>
         <Text style={styles.enunciado}>Agora, informe seu endereço:</Text>
       </View>
       <View style={styles.inputGroup}>

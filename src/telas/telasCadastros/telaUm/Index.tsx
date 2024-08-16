@@ -5,8 +5,11 @@ import { Voltar } from '../../../components/voltar';
 import { Inputs } from '../../../components/inputs';
 import { Buttons } from '../../../components/buttons';
 import { Dropdown } from '../../../components/dropdown';
+import { useState } from 'react';
 
 export function Cadastro({navigation} : { navigation : any}) {
+  const [sexo, setSexo] = useState(['Masculino', 'feminino']);
+
   function voltar(){
     navigation.navigate('Welcome')
   }
@@ -37,7 +40,11 @@ export function Cadastro({navigation} : { navigation : any}) {
         />
         <View style={styles.doisInputs}>
           <View style={{width: "70%"}}>
-            <Dropdown/>
+            <Dropdown
+              label='Sexo'
+              mode='dropdown'
+              options={sexo}
+            />
           </View>
           <View style={{width: "25%"}}>
             <Inputs

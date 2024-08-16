@@ -3,20 +3,30 @@ import { View, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { styles } from './style';
 
-export function Dropdown() {
-  const [doencas, setDoencas] = useState(['Escolha aqui', 'Feminino', 'Masculino']);
+interface props{
+  label: string;
+  mode: 'dialog' | 'dropdawn';
+  options: string[];
+
+}
+
+export function Dropdown({label, mode, options}: props) {
   const [selectedValue, setSelectedValue] = useState('Escolha aqui');
+
+  const handleValueChange = (itemValue: string) => {
+    setSelectedValue(itemValue);
+  };
 
   return (
     <View>
-      <Text style={styles.textDropDown}>Sexo</Text>
+      <Text style={styles.textDropDown}>{label}</Text>
       <View style={styles.areaDropDown}>
         <Picker
-          mode="dropdown"
+          mode='dialog'
           selectedValue={selectedValue}
-          onValueChange={(itemValue) => setSelectedValue(itemValue)}
+          onValueChange={handleValueChange}
         >
-          {doencas.map((item, index) => (
+          {options.map((item, index) => (
             <Picker.Item key={index} label={item} value={item} />
           ))}
         </Picker>

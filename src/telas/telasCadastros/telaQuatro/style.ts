@@ -4,10 +4,18 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: '#6D050F',
         width: "100%",
-        height: "100%",
+        height: "100%", alignItems: 'center', justifyContent: 'space-between',
+    },
+    textTitulo: { 
+        fontSize: 40,
+        color: "#fff",
+    },
+    textEnunciado: {
+        fontSize: 23,
+        color: "#fff",
     },
     areaInputOutros:{
-        height: 415,
+        height: '53%',
     },
     buttonsNav: {
         flexDirection: "row",

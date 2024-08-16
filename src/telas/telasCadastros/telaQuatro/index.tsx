@@ -2,12 +2,14 @@ import { ScrollView, Text, View } from 'react-native';
 import { styles } from './style';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Buttons } from '../../../components/buttons';
-import { Check } from '../../../components/checkbox';
 import React, { useState } from 'react';
 import { Inputs } from '../../../components/inputs';
+import { Dropdown } from '../../../components/dropdown';
 
 export function CadastroQuatro({navigation} : { navigation : any}) {
-const [inputLabel, setnputLabel] = useState(['Pedro', 'Yuri', 'Pedro', 'Yuri','Pedro']);
+const [inputLabel, setInputLabel] = useState(['Quais medicações você usa?', 'Quais alergias você tem?',
+   'Tipo de câncer (caso tenha):', 'Comorbidades:','Observação:', 'Comorbidades:','Observação:']);
+const [tipoSanguineo, settipoSanguineo] = useState(['A+', 'A-','B+', 'B-','AB+', 'AB-','O+', 'O-']);
 
 
 
@@ -22,21 +24,26 @@ function proximo(){
  return (
  
   <SafeAreaView style={styles.container}>
-    <ScrollView contentContainerStyle={{flexGrow: 1, alignItems: 'center', justifyContent: 'space-between'}}>
-        <View style={{flex: 1, justifyContent: 'space-evenly'}}>
-            <View>
-                <Text>FICHA MÉDICA</Text>
-            </View>
-            <View>
-                <Text>Está acabando! Responda algumas perguntas para prevenção</Text>
-            </View>
-            <ScrollView showsVerticalScrollIndicator={false} style={styles.areaInputOutros}>
-                {inputLabel.map((label, index) => (
-                <Inputs key={index} label={label} maxLength={50} placeholder='vamoooooo' />
-                ))}
-            </ScrollView>
+      <View style={{flex: 1, justifyContent: 'center', width: '80%', gap: 40}}>
+        <View style={{alignItems: 'center'}}>
+          <Text style={styles.textTitulo}>FICHA MÉDICA</Text>
         </View>
-
+        <View style={{width: '85%'}}>
+          <Text style={styles.textEnunciado}>Está acabando! Responda algumas perguntas para prevenção</Text>
+        </View>
+        <View style={styles.areaInputOutros}>
+          <ScrollView showsVerticalScrollIndicator={false}>
+                {inputLabel.map((label, index) => (
+                <Inputs key={index} label={label} maxLength={50} placeholder='Escreva aqui...' />
+              ))}
+              <Dropdown
+                label='Tipos Sanguíneos'
+                mode='dialog'
+                options={tipoSanguineo}
+              />
+          </ScrollView>
+        </View>
+      </View>
     <View style={{width:'80%'}}>
       <View style={styles.buttonsNav}>
         <Buttons
@@ -53,11 +60,9 @@ function proximo(){
         />
       </View>
       <View style={styles.indice}>
-        <Text style={styles.indiceText}> 3/4 </Text>
+        <Text style={styles.indiceText}> 4/4 </Text>
       </View>
     </View>
-      </ScrollView>
     </SafeAreaView>
-
   );
 }
