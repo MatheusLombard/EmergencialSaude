@@ -23,7 +23,6 @@
             uncheckedIcon={<Icon name="square-o" size={27} color="white" />}
             checked={isSelected}
             onPress={() => setSelection(!isSelected)}
-            onPressOut={verify}
             textStyle={styles.checkBoxText}
             containerStyle={styles.checkBoxContainer}
           />
