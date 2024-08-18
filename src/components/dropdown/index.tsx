@@ -5,7 +5,7 @@ import { styles } from './style';
 
 interface props{
   label: string;
-  mode: 'dialog' | 'dropdawn';
+  mode: 'dialog' | 'dropdown';
   options: string[];
 
 }
@@ -22,7 +22,7 @@ export function Dropdown({label, mode, options}: props) {
       <Text style={styles.textDropDown}>{label}</Text>
       <View style={styles.areaDropDown}>
         <Picker
-          mode='dialog'
+          mode={mode}
           selectedValue={selectedValue}
           onValueChange={handleValueChange}
         >

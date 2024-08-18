@@ -7,6 +7,7 @@ import { Cadastro } from './src/telas/telasCadastros/telaUm/Index';
 import { CadastroDois } from './src/telas/telasCadastros/telaDois';
 import { CadastroTres } from './src/telas/telasCadastros/telaTres';
 import { CadastroQuatro } from './src/telas/telasCadastros/telaQuatro';
+import { TelaEscolha } from './src/telas/telaEscolha';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="CadastroQuatro"
+        initialRouteName="TelaEscolha"
         screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Login" component={Login} />
@@ -23,6 +24,7 @@ export default function App() {
         <Stack.Screen name="CadastroDois" component={CadastroDois} />
         <Stack.Screen name="CadastroTres" component={CadastroTres} />
         <Stack.Screen name="CadastroQuatro" component={CadastroQuatro} />
+        <Stack.Screen name="TelaEscolha" component={TelaEscolha} />
       </Stack.Navigator>
     </NavigationContainer>
   );

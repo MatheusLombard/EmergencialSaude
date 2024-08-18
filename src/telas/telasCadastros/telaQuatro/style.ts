@@ -4,7 +4,9 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: '#6D050F',
         width: "100%",
-        height: "100%", alignItems: 'center', justifyContent: 'space-between',
+        height: "100%", 
+        alignItems: 'center', 
+        justifyContent: 'space-between',
     },
     textTitulo: { 
         fontSize: 40,

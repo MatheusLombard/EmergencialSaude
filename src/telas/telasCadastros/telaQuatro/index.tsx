@@ -34,7 +34,7 @@ function proximo(){
         <View style={styles.areaInputOutros}>
           <ScrollView showsVerticalScrollIndicator={false}>
                 {inputLabel.map((label, index) => (
-                <Inputs key={index} label={label} maxLength={50} placeholder='Escreva aqui...' />
+                <Inputs label={label} maxLength={50} placeholder='Escreva aqui...' />
               ))}
               <Dropdown
                 label='Tipos Sanguíneos'
