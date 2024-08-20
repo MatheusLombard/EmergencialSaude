@@ -8,8 +8,17 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom: 10, 
     },
+    absolute:{ 
+        height: 120,
+        width: "80%",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "black",
+        backgroundColor: "black",
+        borderRadius: 20,
+    },
     botaoAreaEscolher: {
-        width: "85%",
+        width: "90%",
         height: 100,
         alignItems: "center",
         justifyContent: "center",

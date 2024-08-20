@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
     },
     areaEmergenciasBotoes:{
         height: 500,
-        borderWidth: 1,
     },
     textoAreaEmergencias:{
         color: "white",
