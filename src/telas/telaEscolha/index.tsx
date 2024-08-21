@@ -11,7 +11,7 @@ export function TelaEscolha({ navigation } : { navigation : any}) {
        'Doença 5', 'Doença 6', 'Doença 7', 'Doença 8'])
 
   function chamarEmergencia(emergencia: string) {
-    navigation.navigate('VideoDoenca', {doenca : emergencia}, {video : 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'});
+    navigation.navigate('VideoDoenca', {doenca : emergencia, video : 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'});
   
   }
   function voltar(){

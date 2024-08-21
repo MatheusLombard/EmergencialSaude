@@ -1,18 +1,23 @@
 import React from 'react';
 import { View, Text} from 'react-native';
 import { RouteProp, useRoute } from '@react-navigation/native';
-import { RootStackParamList } from './type'; // Importe o tipo de navegação
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-type VideoDoencaRouteProp = RouteProp<RootStackParamList, 'VideoDoenca'>;
+type routeParamsList = {
+  videoDoenca: {
+    doenca: string;
+    video: string;
+  }
+}
 
 export function VideoDoenca({navigation} : {navigation : any}) {
-  const route = useRoute<VideoDoencaRouteProp>();
-  const { doenca, video } = route.params;
+  const route = useRoute<RouteProp<routeParamsList,"videoDoenca">>();
 
+  
+  console.log(route.params);
   return (
     <SafeAreaView>
-      <Text>{doenca}, {video}</Text>
-    </SafeAreaView>
+      <Text>{route.params?.doenca}, {route.params?.video}</Text>
+    </SafeAreaView> 
   );
 }
