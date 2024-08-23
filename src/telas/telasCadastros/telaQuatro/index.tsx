@@ -15,10 +15,10 @@ const [tipoSanguineo, settipoSanguineo] = useState(['A+', 'A-','B+', 'B-','AB+',
 
 
 function anterior(){
-    navigation.navigate('CadastroTres')
+    navigation.navigate('CadastroTres');
     }
 function proximo(){
-    navigation.navigate('TelaInicial')
+    navigation.navigate('Home');
 }
     
  return (
@@ -34,7 +34,7 @@ function proximo(){
         <View style={styles.areaInputOutros}>
           <ScrollView showsVerticalScrollIndicator={false}>
                 {inputLabel.map((label, index) => (
-                <Inputs label={label} maxLength={50} placeholder='Escreva aqui...' />
+                <Inputs key={index} label={label} maxLength={50} placeholder='Escreva aqui...' />
               ))}
               <Dropdown
                 label='Tipos Sanguíneos'

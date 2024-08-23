@@ -11,7 +11,7 @@ export function Login({ navigation }: { navigation: any }) {
     navigation.navigate('Welcome')
   }
   function entrar(){
-    navigation.navigate('TelaInicial')
+    navigation.navigate('Home')
   }
  return (
    <SafeAreaView style={styles.container}>
@@ -37,7 +37,6 @@ export function Login({ navigation }: { navigation: any }) {
     <View style={styles.viewButtonEntrar}>
       <Buttons
         text = "Entrar"
-        symbol = "&gt;"
         action = {entrar}
       />
     </View>

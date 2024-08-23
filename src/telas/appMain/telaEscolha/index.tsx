@@ -2,8 +2,8 @@ import { TouchableOpacity, View, Text, ScrollView, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { styles } from './style';
-import { Voltar } from '../../components/voltar';
-import { Emergencias } from '../../components/emergencias';
+import { Voltar } from '../../../components/voltar';
+import { Emergencias } from '../../../components/emergencias';
 import { useState } from 'react';
 
 export function TelaEscolha({ navigation } : { navigation : any}) {
@@ -15,13 +15,13 @@ export function TelaEscolha({ navigation } : { navigation : any}) {
   
   }
   function voltar(){
-    navigation.navigate('TelaInicial');
+    navigation.navigate('Home');
   }
  return (
   <SafeAreaView style={styles.container}>
       <Voltar voltar={voltar}/>
       <View  style={{alignItems: 'center'}}>
-        <Image source={require('../../assets/logoLoading.png')} style={{width: 150, height: 180}}/>
+        <Image source={require('../../../assets/logoLoading.png')} style={{width: 150, height: 180}}/>
       </View>
         <View style={styles.areaEmergencias}>
         <View>
