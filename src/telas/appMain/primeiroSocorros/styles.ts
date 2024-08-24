@@ -1,8 +1,7 @@
 import { StyleSheet } from "react-native";
 
 
-export const videoHeight = 190;
-export const videoWidth = '100%';
+export const videoHeight = 400;
 
 export const styles = StyleSheet.create({
     container: {
@@ -17,8 +16,6 @@ export const styles = StyleSheet.create({
         gap: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingBottom: 40,
-        top: -20,
     },
     tituloAreaVideo:{
         fontSize: 28,

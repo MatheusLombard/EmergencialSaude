@@ -23,12 +23,12 @@ export function VideoDoenca({navigation} : {navigation : any}) {
         <Text style={styles.criseAreaVideo}> Crise de {doenca}</Text>
         <YoutubeIframe
           height={videoHeight}
-          width={videoWidth}
+          width={videoHeight}
           videoId='0GOUF8vNqzE'
         />
       </View>
       <View style={styles.areaVoltarInicio}>
-        <Text style={styles.textAreaVoltarInicio} onPress={() => navigation.navigate('TelaInicial')}>Voltar ao início</Text>
+        <Text style={styles.textAreaVoltarInicio} onPress={() => navigation.navigate('Home')}>Voltar ao início</Text>
       </View>
     </SafeAreaView> 
   );

@@ -23,7 +23,7 @@ const Drawer = createDrawerNavigator();
 // Definição do Drawer Navigator
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator screenOptions={{headerShown: false, drawerStyle: { backgroundColor: '#A80B1A', padding: 10 }, drawerLabelStyle: { color: '#fff', fontSize: 18 }}}>
+    <Drawer.Navigator initialRouteName="Configuracoes" screenOptions={{headerShown: false, drawerStyle: { backgroundColor: '#A80B1A', padding: 10 }, drawerLabelStyle: { color: '#fff', fontSize: 18 }}}>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="TelaEscolha" component={TelaEscolha} />
       <Drawer.Screen name="FichaEditavel" component={FichaEditavel} />
