@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#6D050F',
         width: "100%",
         height: "100%",
         padding: 10,
@@ -18,8 +17,10 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
     },
     areaOpcoesConfig: {
+        marginTop: 40,
+        alignSelf: 'center',
+        width: '90%',
         flex: 1,
-        top: 50,
     },
     viewAreaOpcoesConfig: {
         justifyContent: "space-around",
