@@ -1,5 +1,6 @@
 import { TouchableOpacity, View, Text, ViewStyle } from 'react-native';
 import { styles } from './style';
+import { useStylesTheme } from '../../styles';
 
 interface props{
     text: string,
@@ -11,10 +12,11 @@ interface props{
 }
 
 export function Buttons({text, gt, lt, action, style} : props) {
- return (
+    const stylesTheme = useStylesTheme();
+    return (
     <View>
-        <TouchableOpacity style={[styles.buttonPressEntrar, style]} onPress={action}>
-            <Text style={styles.buttonEntrar}> {lt}  {text}  {gt} </Text>
+        <TouchableOpacity style={[{...stylesTheme.backgroundColorComponents,...styles.buttonPressEntrar}, style]} onPress={action}>
+            <Text style={stylesTheme.botoes}> {lt}  {text}  {gt} </Text>
         </TouchableOpacity>
     </View>
   );

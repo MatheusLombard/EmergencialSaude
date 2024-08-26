@@ -5,11 +5,13 @@ import { Buttons } from '../../../components/buttons';
 import React, { useState } from 'react';
 import { Inputs } from '../../../components/inputs';
 import { Dropdown } from '../../../components/dropdown';
+import { useStylesTheme } from '../../../styles';
 
 export function CadastroQuatro({navigation} : { navigation : any}) {
-const [inputLabel, setInputLabel] = useState(['Quais medicações você usa?', 'Quais alergias você tem?',
-   'Tipo de câncer (caso tenha):', 'Comorbidades:','Observação:', 'Comorbidades:','Observação:']);
-const [tipoSanguineo, settipoSanguineo] = useState(['A+', 'A-','B+', 'B-','AB+', 'AB-','O+', 'O-']);
+  const stylesTheme = useStylesTheme();
+  const [inputLabel, setInputLabel] = useState(['Quais medicações você usa?', 'Quais alergias você tem?',
+    'Tipo de câncer (caso tenha):', 'Comorbidades:','Observação:', 'Comorbidades:','Observação:']);
+  const [tipoSanguineo, settipoSanguineo] = useState(['A+', 'A-','B+', 'B-','AB+', 'AB-','O+', 'O-']);
 
 
 
@@ -18,18 +20,18 @@ function anterior(){
     navigation.navigate('CadastroTres');
     }
 function proximo(){
-    navigation.navigate('Home');
+    navigation.navigate('Drawer');
 }
     
  return (
  
-  <SafeAreaView style={styles.container}>
+  <SafeAreaView style={{...stylesTheme.containerTheme, alignItems: 'center'}}>
       <View style={{flex: 1, justifyContent: 'center', width: '80%', gap: 40}}>
         <View style={{alignItems: 'center'}}>
-          <Text style={styles.textTitulo}>FICHA MÉDICA</Text>
+          <Text style={stylesTheme.grande}>FICHA MÉDICA</Text>
         </View>
         <View style={{width: '85%'}}>
-          <Text style={styles.textEnunciado}>Está acabando! Responda algumas perguntas para prevenção</Text>
+          <Text style={stylesTheme.medio}>Está acabando! Responda algumas perguntas para prevenção</Text>
         </View>
         <View style={styles.areaInputOutros}>
           <ScrollView showsVerticalScrollIndicator={false}>
@@ -60,7 +62,7 @@ function proximo(){
         />
       </View>
       <View style={styles.indice}>
-        <Text style={styles.indiceText}> 4/4 </Text>
+        <Text style={{...stylesTheme.pequeno, textAlign: 'center'}}> 4/4 </Text>
       </View>
     </View>
     </SafeAreaView>

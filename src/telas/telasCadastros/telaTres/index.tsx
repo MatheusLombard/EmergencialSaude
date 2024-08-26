@@ -4,8 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Buttons } from '../../../components/buttons';
 import { Check } from '../../../components/checkbox'; // Verifique o caminho correto
 import { styles } from './styles';
+import { useStylesTheme } from '../../../styles';
 
 export function CadastroTres({ navigation }: { navigation: any }) {
+  const stylesTheme = useStylesTheme();
   const [nomes, setNomes] = useState([
     'AIDS', 'Alergia', 'Alzheimer', 'Ansiedade', 'Asma', 'AVC', 'Câncer', 'Cardíaco',
     'Depressão', 'Diabetes', 'Enxaqueca', 'Epilepsia', 'Gastrite Crônica', 'Hipertensão',
@@ -20,15 +22,15 @@ export function CadastroTres({ navigation }: { navigation: any }) {
     navigation.navigate('CadastroQuatro');
   }
 
-  return (
-    <SafeAreaView style={styles.container}>
+  return ( 
+    <SafeAreaView style={stylesTheme.containerTheme}>
       <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'space-between' }}>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-evenly', width: '100%' }}>
           <View style={styles.areaTitulo}>
-            <Text style={styles.tituloFicha}>FICHA MÉDICA</Text>
+            <Text style={stylesTheme.grande}>FICHA MÉDICA</Text>
           </View>
           <View style={{ width: '85%' }}>
-            <Text style={styles.enunciadoFicha}>Marque os problemas de saúde diagnosticados:</Text>
+            <Text style={stylesTheme.medio}>Marque os problemas de saúde diagnosticados:</Text>
           </View>
           <View style={{ width: '100%' }}>
             <View style={styles.areaWrap}>
@@ -54,7 +56,7 @@ export function CadastroTres({ navigation }: { navigation: any }) {
             />
           </View>
           <View style={styles.indice}>
-            <Text style={styles.indiceText}>3/4</Text>
+            <Text style={{...stylesTheme.pequeno, textAlign: 'center'}}>3/4</Text>
           </View>
         </View>
       </ScrollView>

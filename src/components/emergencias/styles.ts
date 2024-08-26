@@ -20,15 +20,8 @@ export const styles = StyleSheet.create({
     botaoAreaEscolher: {
         width: "90%",
         height: 100,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#FFA1AA",
         borderRadius: 10,
         marginBottom: 13,
         
-    },
-    textoBotaoAreaEscolher: {
-        color: "#000",
-        fontSize: 27,
     },
 });

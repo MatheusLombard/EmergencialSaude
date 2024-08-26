@@ -1,9 +1,7 @@
-import { StyleSheet } from "react-native";  
+import { StyleSheet, ViewStyle } from "react-native";  
   
 export const styles = StyleSheet.create({
     checkBoxText: {
-        color: 'white',
-        fontSize: 20,
         marginLeft: 10,
         lineHeight: 23,
       },
@@ -14,5 +12,5 @@ export const styles = StyleSheet.create({
         margin: 0,
         backgroundColor: 'transparent', // Remove a cor de fundo do CheckBox
         borderWidth: 0, // Remove a borda do CheckBox
-      },
+      }, 
 });

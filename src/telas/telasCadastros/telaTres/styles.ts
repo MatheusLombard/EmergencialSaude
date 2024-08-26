@@ -2,27 +2,13 @@ import { StyleSheet } from "react-native";
   
 export const styles = StyleSheet.create({
 
-    container: {
-        backgroundColor: '#6D050F',
-        width: "100%",
-        height: "100%",
-    },
     areaTitulo:{
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
     },
-    tituloFicha: {
-        fontSize: 40,
-        color: "#fff",
-    },
-    enunciadoFicha:{
-        fontSize: 23,
-        color: "#fff",
-        textAlign: "left",
-    },
     areaWrap: {
-        height: 380,
+        height: 400,
         width: "100%",
         flexWrap: "wrap",
         marginLeft: 10,
@@ -38,11 +24,6 @@ export const styles = StyleSheet.create({
     },
     indice:{
         marginBottom: 25,
-    },
-    indiceText: {
-        textAlign: "center",
-        fontSize: 18,
-        color: "#fff",
     },
 
 });

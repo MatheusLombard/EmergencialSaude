@@ -5,28 +5,31 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Inputs } from '../../components/inputs/index';
 import { Buttons } from '../../components/buttons/index';
 import { Voltar } from '../../components/voltar/index';
+import { useStylesTheme } from '../../styles';
+import { useEmergencialContext } from '../../hook/useEmergencialContext';
 
 export function Login({ navigation }: { navigation: any }) {
+  const styleTheme = useStylesTheme();
+  const { backgroundColor } = useEmergencialContext();
   function voltar(){
     navigation.navigate('Welcome')
   }
   function entrar(){
-    navigation.navigate('Home')
+    navigation.navigate('Drawer')
   }
  return (
-   <SafeAreaView style={styles.container}>
+   <SafeAreaView style={styleTheme.containerTheme}>
     <StatusBar
-      style='light'
       animated={true}
-      backgroundColor="#6D050F"
-      hidden={true}
-    />
+      backgroundColor= {backgroundColor}
+      hidden={false}
+    /> 
     <Voltar
     voltar={voltar}
     />
     <View style={{alignItems: "center"}}>
     <View style={styles.sectionLogin}>
-      <Text style={styles.enunciado}>Digite seu CPF para entrar na sua conta</Text>
+      <Text style={styleTheme.medio}>Digite seu CPF para entrar na sua conta</Text>
       <Inputs
         label="Informe seu CPF: "
         placeholder="Exp: 123.456.789-10"

@@ -1,26 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#6D050F',
-        width: "100%",
-        height: "100%",
-        justifyContent: "space-between",
-        gap: 30,
-    },
-    tituloEdicao:{
-        fontSize: 30,
-        color: "#fff",
-        textAlign: 'center',
-    },
+
     areaInputs: {
         flex: 1,
         width: "100%",
         gap: 15,
     },
     tituloAreaInputs:{
-        fontSize: 25,
-        color: '#fff',
         marginHorizontal: 25,
         marginBottom: 30,
     },
@@ -31,13 +18,8 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
     },
-    tituloCheck: {
-        fontSize: 20,
-        color: '#fff',
-        marginHorizontal: 25,
-    },
     areaWrap: {
-        height: 380,
+        height: 400,
         width: "100%",
         flexWrap: "wrap",
         marginLeft: 10,

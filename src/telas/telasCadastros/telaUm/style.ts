@@ -6,10 +6,6 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
     },
-    enunciado: {
-        fontSize: 26,
-        color: "#fff",
-    },
     doisInputs: {
         width: "100%",
         height: 79,
@@ -19,11 +15,6 @@ export const styles = StyleSheet.create({
     },
     indice:{
         marginBottom: 25,
-    },
-    indiceText: {
-        textAlign: "center",
-        fontSize: 18,
-        color: "#fff",
     },
     viewButtonEntrar: {
         alignSelf: "center",

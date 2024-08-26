@@ -1,17 +1,9 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container: {
-        height: '100%',
-        backgroundColor: '#6D050F',
-        justifyContent: "space-between",
-        gap: 30,
-    },
     tituloFicha: {
-        color: '#FFFFFF',
-        fontSize: 28,
         textAlign: 'center',
-        top: -10,
+        top: -30,
     },
     areaInformacoes:{
         flex: 1,
@@ -19,20 +11,15 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     titulosAreaInformacoes: {
-        color: '#FFFFFF',
-        fontSize: 22,
         marginBottom: 10,
         marginLeft: 10,
     },
     boxAreaInformacoes: {
-        backgroundColor: '#DE2335',
         padding: 10,
         borderRadius: 10,
         marginBottom: 10,
     },
     textoBoxAreaInformacoes: {
-        color: '#FFFFFF',
-        fontSize: 19,
         marginBottom: 9,
     },
     subBoxAreaInformacoes: {

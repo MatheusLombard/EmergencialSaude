@@ -6,8 +6,13 @@ import { Inputs } from '../../../components/inputs';
 import { Buttons } from '../../../components/buttons';
 import { Dropdown } from '../../../components/dropdown';
 import { useState } from 'react';
+import { useStylesTheme } from '../../../styles';
+import { useEmergencialContext } from '../../../hook/useEmergencialContext';
+
 
 export function Cadastro({navigation} : { navigation : any}) {
+  const { backgroundColor } = useEmergencialContext();
+  const stylesTheme = useStylesTheme();
   const [sexo, setSexo] = useState(['Masculino', 'feminino']);
 
   function voltar(){
@@ -17,11 +22,11 @@ export function Cadastro({navigation} : { navigation : any}) {
     navigation.navigate('CadastroDois')
   }
  return (
-  <SafeAreaView style={styles.container}>
+  <SafeAreaView style={stylesTheme.containerTheme}>
     <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: 'space-between'}}>
     <StatusBar
       animated={true}
-      backgroundColor="#6D050F"
+      backgroundColor= {backgroundColor}
       hidden={true}
       />
     <Voltar
@@ -29,7 +34,7 @@ export function Cadastro({navigation} : { navigation : any}) {
     />
     <View style={{flex: 1,alignItems: 'center', justifyContent: "space-evenly",gap: 10}  }>
       <View style={{alignItems: 'center',width: "90%"}}>
-        <Text style={styles.enunciado}>Para começar, faremos sua ficha:</Text>
+        <Text style={stylesTheme.medio}>Para começar, faremos sua ficha:</Text>
       </View>
 
       <View style={{display: 'flex', justifyContent: 'center', width: "80%"}}>
@@ -83,7 +88,7 @@ export function Cadastro({navigation} : { navigation : any}) {
         />
       </View>
       <View style={styles.indice}>
-        <Text style={styles.indiceText}> 1/4 </Text>
+        <Text style={{...stylesTheme.pequeno, textAlign: 'center'}}> 1/4 </Text>
       </View>
     </View>
     </ScrollView>

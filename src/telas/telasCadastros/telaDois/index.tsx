@@ -3,8 +3,10 @@ import { styles } from './style';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Inputs } from '../../../components/inputs';
 import { Buttons } from '../../../components/buttons';
+import { useStylesTheme } from '../../../styles';
 
 export function CadastroDois({navigation} : { navigation : any}) {
+  const styleTheme = useStylesTheme();
   function anterior(){
     navigation.navigate('Cadastro')
   }
@@ -12,7 +14,7 @@ export function CadastroDois({navigation} : { navigation : any}) {
     navigation.navigate('CadastroTres')
   }
  return (
-  <SafeAreaView style={styles.container}>
+  <SafeAreaView style={styleTheme.containerTheme}>
   <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: 'space-between',alignItems: 'center'}}>
     <StatusBar
       animated={true}
@@ -21,7 +23,7 @@ export function CadastroDois({navigation} : { navigation : any}) {
     />
     <View style={{flex: 1, justifyContent: "space-evenly", alignItems: 'center', marginTop: 10}}>
       <View style={{width: '100%'}}>
-        <Text style={styles.enunciado}>Agora, informe seu endereço:</Text>
+        <Text style={styleTheme.medio}>Agora, informe seu endereço:</Text>
       </View>
       <View style={styles.inputGroup}>
         <View style={styles.inputGroupItens}>
@@ -83,7 +85,7 @@ export function CadastroDois({navigation} : { navigation : any}) {
         />
       </View>
       <View style={styles.indice}>
-        <Text style={styles.indiceText}> 2/4 </Text>
+        <Text style={{...styleTheme.pequeno, textAlign: 'center'}}> 2/4 </Text>
       </View>
     </View>
   </ScrollView>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { styles } from './style';
+import { useStylesTheme } from '../../styles';
 
 interface props{
   label: string;
@@ -11,6 +12,7 @@ interface props{
 }
 
 export function Dropdown({label, mode, options}: props) {
+  const styleTheme = useStylesTheme();
   const [selectedValue, setSelectedValue] = useState('Escolha aqui');
 
   const handleValueChange = (itemValue: string) => {
@@ -19,8 +21,8 @@ export function Dropdown({label, mode, options}: props) {
 
   return (
     <View>
-      <Text style={styles.textDropDown}>{label}</Text>
-      <View style={styles.areaDropDown}>
+      <Text style={{...styleTheme.pequeno,...styles.textDropDown}}>{label}</Text>
+      <View style={{...styleTheme.backgroundColorComponents,...styles.areaDropDown}}>
         <Picker
           mode={mode}
           selectedValue={selectedValue}

@@ -3,9 +3,6 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     
     container: {
-        backgroundColor: '#6D050F',
-        width: "100%",
-        height: "100%",
         paddingTop: 90,
         padding: 20,
         justifyContent: "center",
@@ -14,8 +11,6 @@ export const styles = StyleSheet.create({
         
     },
     textWelcome: {
-        color: "white",
-        fontSize: 32,
         fontWeight: "bold",
         textAlign: "center",
         marginBottom: 10,
@@ -29,12 +24,8 @@ export const styles = StyleSheet.create({
         width: "70%",
     },
     buttonCadastrar: {
+        backgroundColor: '#E23C4C',
         height: 58,
-        alignItems: "center",
-        justifyContent: "center",
-        color: "white",
-        fontSize: 6,
-        backgroundColor: "#E23C4C",
         borderRadius: 15,
         zIndex: 99999,
     },
@@ -46,15 +37,12 @@ export const styles = StyleSheet.create({
         borderRadius: 15,
     },
     buttonTextCadastrar: {
-        fontSize: 25,
-        color: "white",
+        color: '#fff',
         fontWeight: "bold",
     },
     buttonEntrar: {
         top: -49,
         width: "100%",
-        color: "white",
         textDecorationLine: "underline",
-        fontSize: 22,
     },
 });

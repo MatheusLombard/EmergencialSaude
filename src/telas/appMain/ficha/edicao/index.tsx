@@ -6,7 +6,10 @@ import { Inputs } from '../../../../components/inputs';
 import { Dropdown } from '../../../../components/dropdown';
 import { useState } from 'react';
 import { Check } from '../../../../components/checkbox';
+import { useStylesTheme } from '../../../../styles';
+
 export function Edicao({navigation} : { navigation : any}) {
+    const stylesTheme = useStylesTheme();
     const [ sexo, setSexo ] = useState(['masculino', 'feminino']);
     const [nomes, setNomes] = useState([
         'AIDS', 'Alergia', 'Alzheimer', 'Ansiedade', 'Asma', 'AVC', 'Câncer', 'Cardíaco',
@@ -19,19 +22,19 @@ export function Edicao({navigation} : { navigation : any}) {
        
 
  return (
-   <SafeAreaView style={styles.container}>
-    <Voltar voltar={() => navigation.navigate('FichaEditavel')}/>
+   <SafeAreaView style={{...stylesTheme.containerTheme, gap: 30}}>
+    <Voltar voltar={() => navigation.navigate('Drawer')}/>
     <View>
-      <Text style={styles.tituloEdicao}>EDIÇÃO</Text>
+      <Text style={{...stylesTheme.grande, textAlign: 'center', top: -20}}>EDIÇÃO</Text>
     </View>
     <View style={styles.areaInputs}>
         <ScrollView >
-            <Text style={styles.tituloAreaInputs}> INFORMAÇÕES PESSOAIS</Text>
+            <Text style={{...stylesTheme.medio,...styles.tituloAreaInputs}}> INFORMAÇÕES PESSOAIS</Text>
             <View style={{display: 'flex', justifyContent: 'center', width: "90%", alignSelf: 'center'}}>
                 <Inputs
                     label='Nome Completo'
                     placeholder='Digite seu nome completo'
-                    maxLength={50}
+                    maxLength={50} 
                 />
                 <View style={styles.doisInputs}>
                     <View style={{width: "70%"}}>
@@ -66,7 +69,7 @@ export function Edicao({navigation} : { navigation : any}) {
                     maxLength={50}
                 />
             </View>
-            <Text style={{...styles.tituloAreaInputs, marginTop: 30}}> ENDEREÇO </Text>
+            <Text style={{...stylesTheme.medio,...styles.tituloAreaInputs, marginTop: 30}}> ENDEREÇO </Text>
                 <View style={{display: 'flex', justifyContent: 'center', width: "90%", alignSelf: 'center'}}>
                 <Inputs
                 label='CEP'
@@ -108,9 +111,9 @@ export function Edicao({navigation} : { navigation : any}) {
                 />
 
                 </View>
-                <Text style={{...styles.tituloAreaInputs, marginTop: 30}}> INFORMAÇÕES MÉDICAS </Text>
+                <Text style={{...stylesTheme.medio,...styles.tituloAreaInputs, marginTop: 30}}> INFORMAÇÕES MÉDICAS </Text>
                 <View style={{ width: '85%' }}>
-                    <Text style={styles.tituloCheck}>Problemas de saúde:</Text>
+                    <Text style={{...stylesTheme.pequeno, marginHorizontal: 25}}>Problemas de saúde:</Text>
                 </View>
                 <View style={{ width: '100%'}}>
                     <View style={styles.areaWrap}>
@@ -121,7 +124,7 @@ export function Edicao({navigation} : { navigation : any}) {
                 </View>
                 <View style={{display: 'flex', justifyContent: 'center', width: "90%", alignSelf: 'center'}}>
                     {inputLabel.map((label, index) => (
-                    <Inputs key={index} label={label} maxLength={50} />
+                    <Inputs key={index} label={label} maxLength={50} placeholder={''} />
                     ))}
                     <Dropdown
                         label='Tipos Sanguíneos'
@@ -133,7 +136,7 @@ export function Edicao({navigation} : { navigation : any}) {
 
     </View>
     <View style={styles.viewAreaBotao}> 
-        <TouchableOpacity style={styles.areaBotao} onPress={() => navigation.navigate('Edicao')}>
+        <TouchableOpacity style={styles.areaBotao} onPress={() => navigation.navigate('Home')}>
           <Text style={styles.textoAreaBotao}> salvar </Text>
         </TouchableOpacity>
     </View>
